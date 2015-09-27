@@ -1,6 +1,5 @@
 package com.smartdragons.funfacts;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +8,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
 
@@ -28,11 +25,11 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fact = FactBook.getFact();
+                String fact = FactBook.getFact(FunFactsActivity.this);
                 // Update the label with our dynamic fact
                 factLabel.setText(fact);
 
-                int color = ColorWheel.getColor();
+                int color = ColorWheel.getColor(FunFactsActivity.this);
                 relativeLayout.setBackgroundColor(color);
                 showFactButton.setTextColor(color);
             }
